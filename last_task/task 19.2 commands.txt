@@ -1,0 +1,14 @@
+>>> from task1.models import *
+>>> Game.objects.create(title='minecraft', cost=1200, size=549, description='super game 2006', age_limit=True)
+>>> Game.objects.create(title='Terraria', cost=500, size=200, description='average pixel game', age_limit=True)
+>>> Game.objects.create(title='Roblox', cost=0, size=2200, description='most peaceful game', age
+_limit=False)  
+>>> Game.objects.all()
+<QuerySet [<Game: minecraft>, <Game: Terraria>, <Game: Roblox>]>
+>>> Buyer.objects.create(name='Timur', balance=9999999, age=18)
+>>> Buyer.objects.create(name='Nikita', balance=100, age=10)     
+>>> Buyer.objects.create(name='Andrey', balance=1200, age=21)
+>>> Buyer.objects.all()                                      
+>>> Game.objects.get(id=1).buyer.set((1, 2))         
+>>> Game.objects.get(id=3).buyer.set((1, 3))
+>>> Game.objects.get(id=2).buyer.set((1,))  
