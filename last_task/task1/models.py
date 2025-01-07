@@ -22,4 +22,4 @@ class Game(models.Model):
     buyer = ManyToManyField(Buyer, related_name='games')
     
     def __str__(self):
-        return self.title, self.description, self.cost
+        return self.title
