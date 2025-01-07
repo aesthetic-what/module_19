@@ -8,7 +8,7 @@ from django.db.models import (
 class Buyer(models.Model):
     name = CharField(max_length=50)
     balance = DecimalField(max_digits=10, decimal_places=3)
-    age = IntegerField(max_length=3)
+    age = IntegerField()
     
     def __str__(self):
         return self.name
@@ -22,4 +22,4 @@ class Game(models.Model):
     buyer = ManyToManyField(Buyer, related_name='games')
     
     def __str__(self):
-        return self.title
+        return self.title, self.description, self.cost
